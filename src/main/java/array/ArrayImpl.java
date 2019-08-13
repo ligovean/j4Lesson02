@@ -80,13 +80,6 @@ public class ArrayImpl<E extends Object & Comparable<? super E>> implements Arra
 
     //Вывод массива на экран
     public void display() {
-
-//        System.out.print("[");
-//        for (int i = 0; i < curSize; i++) {
-//            if (i==0) System.out.print(data[i]);
-//            else System.out.print(","+data[i]);
-//        }
-//        System.out.println("]");
         System.out.println(this.toString());
     }
 
