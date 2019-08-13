@@ -11,6 +11,4 @@ public interface Array<E> {
     int indexOf(E val);
     int len();
     void display();
-    void duplicateArray(E[] arr);
-
 }

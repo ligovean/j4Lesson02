@@ -66,8 +66,11 @@ public class ArrayImpl<E> implements Array<E> {
         System.out.println("]");
     }
 
-    @Override
-    public void duplicateArray(E[] arr) {
-        arr = Arrays.copyOf(data, data.length);
-    }
+/* Метод дублирования массива ArrayImpl
+    public Array<E> duplicateArray() {
+        Array<E> arr = new ArrayImpl<E>();
+        //TODO
+        return arr;
+    }*/
+
 }
