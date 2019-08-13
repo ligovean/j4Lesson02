@@ -11,7 +11,7 @@ public class Main {
         Array<Integer> arr3 = new ArrayImpl<Integer>(1000000); //Задание 1. Создать массив большого размера (миллион элементов)
 
         //Задание 3. Заполнить массив случайными числами.
-        for (int i = 0; i < 100000; i++) {
+        for (int i = 0; i < 1000000; i++) {
             int rndInt = (int) (1000*Math.random());
             arr1.add(rndInt);
             arr2.add(rndInt);
