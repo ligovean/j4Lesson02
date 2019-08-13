@@ -16,16 +16,8 @@ public class Main {
             //Более правильное решение для одинаково заполненных массивов: написать метод для класса ArrayImpl который бы на выход выдавал новый массив идентичный исходному.
         }
 
-        System.out.println("Размер массива 1: " + arr1.len());
-        arr1.display();
-        System.out.println("Удаление 3-го элемента Массива 1: " + arr1.removeByIndex(3));
-
-        System.out.println("Размер Массива 1: " + arr1.len());
-        arr1.display();
-
-        System.out.println("Удаление 10-го элемента Массива 1: " + arr1.removeByIndex(10));
-
-        System.out.println("Размер массива 2: " + arr2.len());
-        arr2.display();
+        System.out.println("Массив 1: " + arr1.toString());
+        System.out.println("Массив 2: " + arr2.toString());
+        System.out.println("Массив 3: " + arr3.toString());
     }
 }

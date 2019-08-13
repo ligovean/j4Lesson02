@@ -3,7 +3,9 @@ package array;
 import java.util.Arrays;
 import java.util.Objects;
 
-public class ArrayImpl<E> implements Array<E> {
+
+
+public class ArrayImpl<E extends Object & Comparable<? super E>> implements Array<E> {
 
     private E[] data;
     private int curSize;
@@ -94,5 +96,50 @@ public class ArrayImpl<E> implements Array<E> {
         //TODO
         return arr;
     }*/
+
+//===================МЕТОДЫ СОРТИРОВКИ==============
+    //реализация Метода пузырька
+    public void sortBubble() {
+        for (int i = 0; i < curSize - 1; i++) {
+            for (int j = 0; j < curSize - 1 - i; j++) {
+                if (data[j].compareTo(data[j + 1]) > 0) {
+                    swap(j, j + 1);
+                }
+            }
+        }
+    }
+
+    //реализация Метода выбора
+    public void sortSelect() {
+        for (int i = 0; i < curSize - 1; i++) {
+            int minIndex = i;
+            for (int j = i + 1; j < curSize; j++) {
+                if (data[j].compareTo(data[minIndex]) < 0) {
+                    minIndex = j;
+                }
+            }
+            swap(minIndex, i);
+        }
+    }
+
+    //реализация Метода вставки
+    public void sortInsert() {
+        for (int i = 1; i < curSize; i++) {
+            E temp = data[i];
+            int in = i;
+            while (in > 0 && data[in - 1].compareTo(temp) > 0) {
+                data[in] = data[in - 1];
+                in--;
+            }
+            data[in] = temp;
+        }
+    }
+
+    //Замена элементов
+    private void swap(int index1, int index2) {
+        E temp = data[index1];
+        data[index1] = data[index2];
+        data[index2] = temp;
+    }
 
 }
