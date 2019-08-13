@@ -1,6 +1,7 @@
 package array;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 public class ArrayImpl<E> implements Array<E> {
 
@@ -30,40 +31,61 @@ public class ArrayImpl<E> implements Array<E> {
         for (int i = val; i < curSize; i++) {
             data[i] = data[i+1];
         }
-        data[curSize]=null;
-        curSize--;
+        data[--curSize]=null;
+
         //if (curSize <= data.length/2) TODO Сокращение размера массива
         return true;
     }
 
+    //Удаление элемента по содержимому
     public boolean removeByValue(E val) {
-        return false;
+        int index = indexOf(val);
+        return removeByIndex(index);
     }
 
-    public boolean contains(Object val) {
-        return false;
+    //Проверка на присутствие в массиве по содержимому
+    public boolean contains(E val) {
+        return indexOf(val) != -1;
     }
 
-    public int indexOf(Object val) {
-        return 0;
+    //Возврещение индекса по содержимому
+    public int indexOf(E value) {
+        for (int i = 0; i < curSize; i++) {
+            if (Objects.equals(value, data[i])) {
+                return i;
+            }
+        }
+        return -1;
     }
 
+    //Текущая длинна массива
     public int len() {
         return curSize;
     }
 
-    public int curSize() {
-        return curSize;
+    //Печать массива в строку
+
+    @Override
+    public String toString() {
+        String result = "{";
+        for (int i = 0; i < curSize; i++) {
+            if (i==0) result += data[i];
+            else result += ","+data[i];
+        }
+        result +="}";
+        return result;
     }
 
+    //Вывод массива на экран
     public void display() {
 
-        System.out.print("[");
-        for (int i = 0; i < curSize; i++) {
-            if (i==0) System.out.print(data[i]);
-            else System.out.print(","+data[i]);
-        }
-        System.out.println("]");
+//        System.out.print("[");
+//        for (int i = 0; i < curSize; i++) {
+//            if (i==0) System.out.print(data[i]);
+//            else System.out.print(","+data[i]);
+//        }
+//        System.out.println("]");
+        System.out.println(this.toString());
     }
 
 /* Метод дублирования массива ArrayImpl

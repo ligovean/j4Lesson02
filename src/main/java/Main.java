@@ -13,8 +13,8 @@ public class Main {
             arr1.add(rndInt);
             arr2.add(rndInt);
             arr3.add(rndInt);
+            //Более правильное решение для одинаково заполненных массивов: написать метод для класса ArrayImpl который бы на выход выдавал новый массив идентичный исходному.
         }
-
 
         System.out.println("Размер массива 1: " + arr1.len());
         arr1.display();
@@ -27,6 +27,5 @@ public class Main {
 
         System.out.println("Размер массива 2: " + arr2.len());
         arr2.display();
-
     }
 }
