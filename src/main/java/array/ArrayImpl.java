@@ -19,6 +19,8 @@ public class ArrayImpl<E extends Object & Comparable<? super E>> implements Arra
         this.data = (E[]) new Object[initLen];
     }
 
+    //Задание 2. Написать методы удаления, добавления, поиска элемента массива.
+
     //Добавление нового элемента с увеличением размера массива
     public void add(E val) {
         if (curSize == data.length) {
@@ -90,6 +92,7 @@ public class ArrayImpl<E extends Object & Comparable<? super E>> implements Arra
         return arr;
     }*/
 
+//Задание 4. Написать методы, реализующие рассмотренные виды сортировок, и проверить скорость выполнения каждой.
 //===================МЕТОДЫ СОРТИРОВКИ==============
     //реализация Метода пузырька
     public void sortBubble() {
